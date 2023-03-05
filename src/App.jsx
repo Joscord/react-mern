@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css'
 import ArticlesList from './components/stateful/ArticlesList'
+import Footer from './components/stateless/Footer'
 
 function App() {
   const [bitcoinArticles, setBitcoinArticles] = useState([])
@@ -22,6 +23,7 @@ function App() {
       <div className='container'>
         <ArticlesList articles={bitcoinArticles}/>
       </div>
+      <Footer/>
     </div>
   )
 }
