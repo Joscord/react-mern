@@ -1,9 +1,10 @@
 import React from 'react'
+import { StyledFooter } from "./StyledFooter"
 
 const Footer = () => (
-    <footer className="text-center text-white" style={{backgroundColor: "#000"}}>
+    <StyledFooter>
         Thanks to NewsAPI
-    </footer>
+    </StyledFooter>
 )
 
 export default Footer
