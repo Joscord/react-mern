@@ -1,19 +1,9 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Card from '../stateless/Card'
-import Modal from './Modal'
 
 const Article = ({article}) => {
   const {title, author, urlToImage, url, description, content} = article
-  const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const showModal = () => {
-    console.log("running show modal")
-    setIsModalOpen(true)
-  }
-
-  const closeModal = () => {
-    setIsModalOpen(false)
-  }
 
   return (
     <Card>
@@ -25,9 +15,7 @@ const Article = ({article}) => {
         </div>
         <div className="card-body">
             <a href={url} className="card-link">Source</a>
-            <button onClick={showModal} className="card-link">See more</button>
         </div>
-        {isModalOpen && <Modal content={content} closeModal={closeModal}/>}
     </Card>
   )
 }
