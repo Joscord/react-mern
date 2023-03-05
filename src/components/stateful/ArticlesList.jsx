@@ -3,10 +3,12 @@ import Article from './Article'
 
 const ArticlesList = ({articles}) => {
   return (
-    <ul>
+    <ul className='row'>
         {
             articles && articles.map(article => (
-                <Article article={article}/>
+                <li key={article.description} className="col">
+                    <Article article={article}/>
+                </li>
             ))
         }
     </ul>

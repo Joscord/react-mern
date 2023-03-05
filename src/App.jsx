@@ -1,4 +1,5 @@
-import { useStatem, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 import './App.css'
 import ArticlesList from './components/stateful/ArticlesList'
 
@@ -8,16 +9,19 @@ function App() {
     const endpoint = "https://newsapi.org/v2/everything?q=bitcoin&apiKey=594fd65e60414aeaaf3dc1690ef90a5d"
     const response = await axios.get(endpoint)
     const { articles } = response.data 
+    console.log(articles)
     setBitcoinArticles(articles)
   }
 
-  useState(() => {
+  useEffect(() => {
     fetchData()
   }, [])
 
   return (
     <div className="App">
-      <ArticlesList articles={bitcoinArticles}/>
+      <div className='container'>
+        <ArticlesList articles={bitcoinArticles}/>
+      </div>
     </div>
   )
 }
