@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import axios from 'axios'
 import './App.css'
 import ArticlesList from './components/stateful/ArticlesList'
@@ -7,12 +7,12 @@ import Navbar from './components/stateless/Navbar'
 
 const App = () => {
   const [bitcoinArticles, setBitcoinArticles] = useState([])
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     const endpoint = `https://newsapi.org/v2/everything?q=bitcoin&apiKey=${import.meta.env.VITE_API_KEY}`
     const response = await axios.get(endpoint)
     const { articles } = response.data 
     setBitcoinArticles(articles)
-  }
+  }, [])
 
   useEffect(() => {
     fetchData()
