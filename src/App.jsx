@@ -3,6 +3,7 @@ import axios from 'axios'
 import './App.css'
 import ArticlesList from './components/stateful/ArticlesList'
 import Footer from './components/stateless/Footer'
+import Navbar from './components/stateless/Navbar'
 
 function App() {
   const [bitcoinArticles, setBitcoinArticles] = useState([])
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar/>
       <div className='container'>
         <ArticlesList articles={bitcoinArticles}/>
       </div>
