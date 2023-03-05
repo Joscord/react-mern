@@ -1,8 +1,15 @@
 import React from 'react'
+import Article from './Article'
 
-const ArticlesList = () => {
+const ArticlesList = ({articles}) => {
   return (
-    <div>ArticlesList</div>
+    <ul>
+        {
+            articles && articles.map(article => (
+                <Article article={article}/>
+            ))
+        }
+    </ul>
   )
 }
 

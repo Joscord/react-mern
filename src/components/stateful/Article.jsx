@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Article = () => {
+const Article = ({title, author, urlToImage, url, description}) => {
   return (
     <div>Article</div>
   )
